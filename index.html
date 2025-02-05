@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooming Flower</title>
+    <style>
+        /* General styling */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #8A84E2;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Container for the flower and text */
+        .container {
+            text-align: center;
+            position: relative;
+        }
+
+        /* Flower styling */
+        .flower {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+        .petal {
+            position: absolute;
+            width: 50px;
+            height: 100px;
+            border-radius: 50% 50% 0 0;
+            transform-origin: bottom center;
+            opacity: 0;
+            transform: scale(0) rotate(0deg);
+            animation: bloom 0.5s ease-in-out forwards;
+        }
+
+        /* Petal colors and delays */
+        .petal:nth-child(1) { background: #ff9aa2; animation-delay: 0s; }
+        .petal:nth-child(2) { background: #ffb7b2; animation-delay: 0.2s; }
+        .petal:nth-child(3) { background: #ffdac1; animation-delay: 0.4s; }
+        .petal:nth-child(4) { background: #e2f0cb; animation-delay: 0.6s; }
+        .petal:nth-child(5) { background: #b5ead7; animation-delay: 0.8s; }
+        .petal:nth-child(6) { background: #c7ceea; animation-delay: 1s; }
+        .petal:nth-child(7) { background: #ff9aa2; animation-delay: 1.2s; }
+        .petal:nth-child(8) { background: #ffb7b2; animation-delay: 1.4s; }
+
+        /* Petal positions */
+        .petal:nth-child(1) { transform: rotate(0deg); }
+        .petal:nth-child(2) { transform: rotate(45deg); }
+        .petal:nth-child(3) { transform: rotate(90deg); }
+        .petal:nth-child(4) { transform: rotate(135deg); }
+        .petal:nth-child(5) { transform: rotate(180deg); }
+        .petal:nth-child(6) { transform: rotate(225deg); }
+        .petal:nth-child(7) { transform: rotate(270deg); }
+        .petal:nth-child(8) { transform: rotate(315deg); }
+
+        /* Blooming animation */
+        @keyframes bloom {
+            0% {
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(var(--rotate));
+            }
+        }
+
+        /* Text styling */
+        .message {
+            font-size: 22px;
+            color: #333;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+            animation-delay: 2s;
+            margin-top: 120px; /* Increased margin-top to move it further down */
+            margin-left: -30px; /* Shifted to the left */
+        }
+
+        /* Fade-in animation for text */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .flower {
+                width: 80px;
+                height: 80px;
+            }
+
+            .petal {
+                width: 40px;
+                height: 80px;
+            }
+
+            .message {
+                font-size: 18px;
+                margin-top: 100px; /* Adjusted further down for mobile */
+                margin-left: -20px; /* Shifted left slightly for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flower">
+            <div class="petal" style="--rotate: 0deg;"></div>
+            <div class="petal" style="--rotate: 45deg;"></div>
+            <div class="petal" style="--rotate: 90deg;"></div>
+            <div class="petal" style="--rotate: 135deg;"></div>
+            <div class="petal" style="--rotate: 180deg;"></div>
+            <div class="petal" style="--rotate: 225deg;"></div>
+            <div class="petal" style="--rotate: 270deg;"></div>
+            <div class="petal" style="--rotate: 315deg;"></div>
+        </div>
+        <div class="message">I am sorry, Moonpakhi</div>
+    </div>
+</body>
+</html>
